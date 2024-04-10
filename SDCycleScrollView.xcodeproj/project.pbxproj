@@ -34,6 +34,7 @@
 		999C109A1AC14F7200C11CDB /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 999C10991AC14F7200C11CDB /* h1.jpg */; };
 		99A732631B24AB660033E878 /* 005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99A732621B24AB660033E878 /* 005.jpg */; };
 		9BEB00FE3EB709E4FB44BABF /* libPods-SDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE55CBF170FE2BFA0498D7B2 /* libPods-SDCycleScrollView.a */; };
+		EBD3C1AD2BC6423500A24298 /* AyCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C1AB2BC6423500A24298 /* AyCycleScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		999C10961AC14F3B00C11CDB /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
 		999C10991AC14F7200C11CDB /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
 		99A732621B24AB660033E878 /* 005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 005.jpg; sourceTree = "<group>"; };
+		EBD3C1AA2BC6423500A24298 /* AyCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyCycleScrollView.h; sourceTree = "<group>"; };
+		EBD3C1AB2BC6423500A24298 /* AyCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyCycleScrollView.m; sourceTree = "<group>"; };
 		EE55CBF170FE2BFA0498D7B2 /* libPods-SDCycleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDCycleScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,6 +227,7 @@
 		9900D1971ABEB2C70077A6CB /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				EBD3C1AC2BC6423500A24298 /* AyCycleScrollView */,
 				99E7B30A1AC11F1C009F9A2E /* SDCycleScrollView */,
 			);
 			path = Lib;
@@ -264,6 +268,15 @@
 				EE55CBF170FE2BFA0498D7B2 /* libPods-SDCycleScrollView.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBD3C1AC2BC6423500A24298 /* AyCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EBD3C1AA2BC6423500A24298 /* AyCycleScrollView.h */,
+				EBD3C1AB2BC6423500A24298 /* AyCycleScrollView.m */,
+			);
+			path = AyCycleScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +342,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -400,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9900D17A1ABEB2490077A6CB /* ViewController.m in Sources */,
+				EBD3C1AD2BC6423500A24298 /* AyCycleScrollView.m in Sources */,
 				990141031AC941FD00D0D74F /* TADotView.m in Sources */,
 				990141011AC941FD00D0D74F /* TAAbstractDotView.m in Sources */,
 				6BAA27FD1EFEA798008693AB /* CustomCollectionViewCell.m in Sources */,
@@ -530,7 +545,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SDCycleScrollView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -548,7 +563,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SDCycleScrollView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
