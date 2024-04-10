@@ -1,5 +1,5 @@
 //
-//  AyCycleScrollView.h
+//  AYCycleScrollView.h
 //
 //  Created by alpha yu on 2024/03/05
 //
@@ -8,47 +8,47 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class AyCycleScrollView;
+@class AYCycleScrollView;
 
-@protocol AyCycleScrollViewDataSource <NSObject>
+@protocol AYCycleScrollViewDataSource <NSObject>
 
 @required
 
-- (NSInteger)numberOfItemsInCycleScrollView:(AyCycleScrollView *)cycleScrollView;
-- (__kindof UICollectionViewCell *)cycleScrollView:(AyCycleScrollView *)cycleScrollView cellForItemAtIndex:(NSInteger)index;
+- (NSInteger)numberOfItemsInCycleScrollView:(AYCycleScrollView *)cycleScrollView;
+- (__kindof UICollectionViewCell *)cycleScrollView:(AYCycleScrollView *)cycleScrollView cellForItemAtIndex:(NSInteger)index;
 
 @end
 
-@protocol AyCycleScrollViewDelegate <NSObject>
+@protocol AYCycleScrollViewDelegate <NSObject>
 
 @optional
 
 /// 点击
-- (void)cycleScrollView:(AyCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
+- (void)cycleScrollView:(AYCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
 
 /// 滚动到某一页
-- (void)cycleScrollView:(AyCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
+- (void)cycleScrollView:(AYCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
 
 /// 滚动中
-- (void)cycleScrollViewDidScroll:(AyCycleScrollView *)cycleScrollView;
+- (void)cycleScrollViewDidScroll:(AYCycleScrollView *)cycleScrollView;
 
 /// 开始滚动
-- (void)cycleScrollViewWillBeginDragging:(AyCycleScrollView *)cycleScrollView;
+- (void)cycleScrollViewWillBeginDragging:(AYCycleScrollView *)cycleScrollView;
 
 /// 结束滚动
-- (void)cycleScrollViewDidEndDragging:(AyCycleScrollView *)cycleScrollView willDecelerate:(BOOL)decelerate;
+- (void)cycleScrollViewDidEndDragging:(AYCycleScrollView *)cycleScrollView willDecelerate:(BOOL)decelerate;
 
 @end
 
-@interface AyCycleScrollView : UIView
+@interface AYCycleScrollView : UIView
 
 @property (nonatomic, strong, readonly) UICollectionView *mainView;
 
 @property (nonatomic,assign) BOOL infiniteLoop; ///< 是否无限循环, 默认Yes
 @property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;  ///< 图片滚动方向，默认为水平滚动
 
-@property (nonatomic, weak) id<AyCycleScrollViewDelegate> delegate;
-@property (nonatomic, weak) id<AyCycleScrollViewDataSource> dataSource;
+@property (nonatomic, weak) id<AYCycleScrollViewDelegate> delegate;
+@property (nonatomic, weak) id<AYCycleScrollViewDataSource> dataSource;
 
 @property (nonatomic, assign, readonly) NSInteger currentIndex; ///< 当前序号
 @property (nonatomic, assign) NSInteger defaultIndex;           ///< 默认序号，默认 0

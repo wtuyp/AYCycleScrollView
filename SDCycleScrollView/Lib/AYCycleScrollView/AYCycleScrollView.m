@@ -1,13 +1,13 @@
 //
-//  AyCycleScrollView.h
+//  AYCycleScrollView.h
 //
 //  Created by alpha yu on 2024/03/05
 //
 
 
-#import "AyCycleScrollView.h"
+#import "AYCycleScrollView.h"
 
-@interface AyCycleScrollView () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface AYCycleScrollView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *mainView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation AyCycleScrollView
+@implementation AYCycleScrollView
 
 #pragma mark - life
 

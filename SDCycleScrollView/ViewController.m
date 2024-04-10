@@ -29,19 +29,19 @@
  */
 
 #import "ViewController.h"
-#import "AyCycleScrollView.h"
+#import "AYCycleScrollView.h"
 #import "CustomCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "SDCollectionViewCell.h"
 
-@interface ViewController () <AyCycleScrollViewDelegate>
+@interface ViewController () <AYCycleScrollViewDelegate>
 
 @property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) AyCycleScrollView *cycleScrollView0;
-@property (nonatomic, strong) AyCycleScrollView *cycleScrollView1;
-@property (nonatomic, strong) AyCycleScrollView *cycleScrollView2;
-@property (nonatomic, strong) AyCycleScrollView *cycleScrollView3;
-@property (nonatomic, strong) AyCycleScrollView *cycleScrollView4;
+@property (nonatomic, strong) AYCycleScrollView *cycleScrollView0;
+@property (nonatomic, strong) AYCycleScrollView *cycleScrollView1;
+@property (nonatomic, strong) AYCycleScrollView *cycleScrollView2;
+@property (nonatomic, strong) AYCycleScrollView *cycleScrollView3;
+@property (nonatomic, strong) AYCycleScrollView *cycleScrollView4;
 
 @property (nonatomic, copy) NSArray *imageNames;
 @property (nonatomic, copy) NSArray *imagesURLStrings;
@@ -51,7 +51,7 @@
 
 @implementation ViewController
 {
-    NSMutableArray<AyCycleScrollView *> *_scrollViews;
+    NSMutableArray<AYCycleScrollView *> *_scrollViews;
 }
 
 - (void)viewDidLoad {
@@ -103,7 +103,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 本地加载 --- 创建不带标题的图片轮播器
-    AyCycleScrollView *cycleScrollView = [[AyCycleScrollView alloc] initWithFrame:CGRectMake(0, 64, w, 180)];
+    AYCycleScrollView *cycleScrollView = [[AYCycleScrollView alloc] initWithFrame:CGRectMake(0, 64, w, 180)];
     cycleScrollView.infiniteLoop = YES;
     cycleScrollView.delegate = self;
 //    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
@@ -123,7 +123,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 网络加载 --- 创建带标题的图片轮播器
-    AyCycleScrollView *cycleScrollView2 = [[AyCycleScrollView alloc] initWithFrame:CGRectMake(0, 280, w, 180)];
+    AYCycleScrollView *cycleScrollView2 = [[AYCycleScrollView alloc] initWithFrame:CGRectMake(0, 280, w, 180)];
     
 //    cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
 //    cycleScrollView2.titlesGroup = titles;
@@ -154,7 +154,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 网络加载 --- 创建自定义图片的pageControlDot的图片轮播器
-    AyCycleScrollView *cycleScrollView3 = [[AyCycleScrollView alloc] initWithFrame:CGRectMake(0, 500, w, 180)];
+    AYCycleScrollView *cycleScrollView3 = [[AYCycleScrollView alloc] initWithFrame:CGRectMake(0, 500, w, 180)];
 //    cycleScrollView3.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
 //    cycleScrollView3.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
 //    cycleScrollView3.imageURLStringsGroup = imagesURLStrings;
@@ -169,7 +169,7 @@
     
     // 网络加载 --- 创建只上下滚动展示文字的轮播器
     // 由于模拟器的渲染问题，如果发现轮播时有一条线不必处理，模拟器放大到100%或者真机调试是不会出现那条线的
-    AyCycleScrollView *cycleScrollView4 = [[AyCycleScrollView alloc] initWithFrame:CGRectMake(0, 750, w, 40)];
+    AYCycleScrollView *cycleScrollView4 = [[AYCycleScrollView alloc] initWithFrame:CGRectMake(0, 750, w, 40)];
     cycleScrollView4.scrollDirection = UICollectionViewScrollDirectionVertical;
 //    cycleScrollView4.onlyDisplayText = YES;
     
@@ -190,7 +190,7 @@
     
     // 如果要实现自定义cell的轮播图，必须先实现customCollectionViewCellClassForCycleScrollView:和setupCustomCell:forIndex:代理方法
     
-    self.cycleScrollView4 = [[AyCycleScrollView alloc] initWithFrame:CGRectMake(0, 820, w, 120)];
+    self.cycleScrollView4 = [[AYCycleScrollView alloc] initWithFrame:CGRectMake(0, 820, w, 120)];
 //    self.cycleScrollView4.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
 //    self.cycleScrollView4.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
 //    self.cycleScrollView4.imageURLStringsGroup = imagesURLStrings;
@@ -202,9 +202,9 @@
     [_scrollViews addObject:self.cycleScrollView4];
     
     __weak typeof(self) weakSelf = self;
-    [_scrollViews enumerateObjectsUsingBlock:^(AyCycleScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.delegate = (id<AyCycleScrollViewDelegate>)weakSelf;
-        obj.dataSource = (id<AyCycleScrollViewDataSource>)weakSelf;
+    [_scrollViews enumerateObjectsUsingBlock:^(AYCycleScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.delegate = (id<AYCycleScrollViewDelegate>)weakSelf;
+        obj.dataSource = (id<AYCycleScrollViewDataSource>)weakSelf;
     }];
     
     [self startTimer];
@@ -220,7 +220,7 @@
 
 #pragma mark - SDCycleScrollViewDataSource
 
-- (NSInteger)numberOfItemsInCycleScrollView:(AyCycleScrollView *)cycleScrollView {
+- (NSInteger)numberOfItemsInCycleScrollView:(AYCycleScrollView *)cycleScrollView {
     if (cycleScrollView == self.cycleScrollView0) {
         return self.imageNames.count;
     } else if (cycleScrollView == self.cycleScrollView1
@@ -233,7 +233,7 @@
     return 0;
 }
 
-- (__kindof UICollectionViewCell *)cycleScrollView:(AyCycleScrollView *)cycleScrollView cellForItemAtIndex:(NSInteger)index {
+- (__kindof UICollectionViewCell *)cycleScrollView:(AYCycleScrollView *)cycleScrollView cellForItemAtIndex:(NSInteger)index {
     if (cycleScrollView != self.cycleScrollView4) {
         SDCollectionViewCell *cell = [cycleScrollView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(SDCollectionViewCell.class) forIndex:index];
         
@@ -272,7 +272,7 @@
 
 #pragma mark - SDCycleScrollViewDelegate
 
-- (void)cycleScrollView:(AyCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+- (void)cycleScrollView:(AYCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     NSLog(@"---点击了第%ld张图片", (long)index);
     
 //    [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
@@ -289,15 +289,15 @@
  
  */
 
-- (void)cycleScrollViewDidScroll:(AyCycleScrollView *)cycleScrollView {
+- (void)cycleScrollViewDidScroll:(AYCycleScrollView *)cycleScrollView {
     
 }
 
-- (void)cycleScrollViewWillBeginDragging:(AyCycleScrollView *)cycleScrollView {
+- (void)cycleScrollViewWillBeginDragging:(AYCycleScrollView *)cycleScrollView {
     [self stopTimer];
 }
 
-- (void)cycleScrollViewDidEndDragging:(AyCycleScrollView *)cycleScrollView willDecelerate:(BOOL)decelerate {
+- (void)cycleScrollViewDidEndDragging:(AYCycleScrollView *)cycleScrollView willDecelerate:(BOOL)decelerate {
     [self startTimer];
 }
 
@@ -306,7 +306,7 @@
 
 // 如果要实现自定义cell的轮播图，必须先实现customCollectionViewCellClassForCycleScrollView:和setupCustomCell:forIndex:代理方法
 
-- (Class)customCollectionViewCellClassForCycleScrollView:(AyCycleScrollView *)view
+- (Class)customCollectionViewCellClassForCycleScrollView:(AYCycleScrollView *)view
 {
     if (view != self.cycleScrollView4) {
         return nil;
@@ -314,7 +314,7 @@
     return [CustomCollectionViewCell class];
 }
 
-- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(AyCycleScrollView *)view
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(AYCycleScrollView *)view
 {
     CustomCollectionViewCell *myCell = (CustomCollectionViewCell *)cell;
     [myCell.imageView sd_setImageWithURL:self.imagesURLStrings[index]];
@@ -338,7 +338,7 @@
 }
 
 - (void)scrollToNextIndex {
-    [_scrollViews enumerateObjectsUsingBlock:^(AyCycleScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [_scrollViews enumerateObjectsUsingBlock:^(AYCycleScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj scrollToNextIndex];
     }];
 }
