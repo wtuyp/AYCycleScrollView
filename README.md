@@ -1,12 +1,10 @@
 
-AyCycleScrollView 是从 SDCycleScrollView 中，将循环滚动的核心代码抽离出来重新封装而成的组件。
+AYCycleScrollView 是从 SDCycleScrollView 中，将循环滚动的核心代码抽离出来重新封装而成的组件。
+
 该组件只有最基础的循环滚动功能，没有实现自动滚动，没有 PageControl，需要自定义每页的视图。
 
 ## SDCycleScrollView（新建QQ交流群：185534916、675995250）
 ## ☆☆☆ “iOS图片、文字轮播器” ☆☆☆
-
-### 字节跳动 iOS 岗位招聘
-北上广深杭大量招人，各种研发岗位都在找，有意向者可以直接点击后面链接投递简历或者联系我 gsdios@126.com https://job.toutiao.com/s/eL91QMm，
 
 ### 支持pod导入
 pod 'SDCycleScrollView','>= 1.82'
