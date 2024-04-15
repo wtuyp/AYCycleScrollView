@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UICollectionView *mainView;
 
-@property (nonatomic,assign) BOOL infiniteLoop; ///< 是否无限循环, 默认Yes
+@property (nonatomic, assign) BOOL infiniteLoop; ///< 是否无限循环, 默认为YES
 @property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;  ///< 图片滚动方向，默认为水平滚动
 
 @property (nonatomic, weak) id<AYCycleScrollViewDelegate> delegate;
